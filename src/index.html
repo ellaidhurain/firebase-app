@@ -1,14 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="/dist/output.css"/>
+    <link rel="stylesheet" href="/dist/output.css" />
+  </head>
+  <body class="bg-gray-200">
+    <!-- p-1 = 4px -->
+    <header class="bg-slate-800 text-white text-center p-10">
+      <h1 class="text-4xl text-red-500 font-Inter font-bold">HiveFy</h1>
+      <p class="mt-2 text-gray-300">Free education for everyone</p>
+    </header>
 
-</head>
-<body>
-        <h1 class="bg-slate-700">sd</h1>
-</body>
+    <main class="p-10 flex" >
+      <div class="bg-white p-5 rounded-lg w-8/12 mr-5 shadow">
+        <h3 class="text-sm font-semibold">Get free education for everyone</h3>
+        <p class="text-sm text-gray-800">Join our community</p>
+
+        <form>
+          <div class="my-5 grid grid-cols-2 gap-4 text-sm">
+            <div>
+              <label for="fullName" class="block text-gray-800"
+                >Full name<span class="text-red-500">*</span></label
+              >
+              <input
+                type="text"
+                placeholder="Full name"
+                id="fullName"
+                class="inputStyle"
+                name="fullName"
+              />
+            </div>
+
+            <div class="text-sm space-x-2 text-gray-800">
+              <label for="gender" class="mb-2 flex items-center"
+                >Gender<span class="text-red-500">*</span></label
+              >
+              <label
+                ><input
+                  type="radio"
+                  id="gender"
+                  name="gender"
+                  value="male"
+                  class="mr-1"
+                  name="male"
+                />male</label
+              >
+              <label
+                ><input
+                  type="radio"
+                  id="gender"
+                  name="gender"
+                  value="male"
+                  class="mr-1"
+                  name="female"
+                />Female</label
+              >
+              <label
+                ><input
+                  type="radio"
+                  id="gender"
+                  name="gender"
+                  value="male"
+                  class="mr-1"
+                  name="others"
+                />others</label
+              >
+            </div>
+            <div>
+              <label for="email" class="block text-gray-800"
+                >Email address<span class="text-red-500">*</span></label
+              >
+              <input
+                type="email"
+                placeholder="example@mail.com"
+                id="email"
+                class="inputStyle"
+                name="email"
+              />
+            </div>
+            <div>
+              <label for="D.O.B" class="block text-gray-800"
+                >Date of Birth<span class="text-red-500">*</span></label
+              >
+              <input
+                type="date"
+                placeholder="D.O.B"
+                id="D.O.B"
+                class="inputStyle"
+                name="dob"
+              />
+            </div>
+            <div>
+              <label for="skillKnown" class="block text-gray-800"
+                >What skill do you know already?<span class="text-red-500">
+                  *</span
+                ></label
+              >
+              <input
+                type="text"
+                placeholder="Skills seperated by ;"
+                id="skillKnown"
+                class="inputStyle"
+                name="skills"
+              />
+            </div>
+            <div>
+              <label for="experience" class="block text-gray-800"
+                >Experience?<span class="text-red-500"> *</span></label
+              >
+              <select class="inputStyle">
+                <option value="">select experience</option>
+                <option value="0.5">less than 6 months</option>
+                <option value="2">less than 2 years</option>
+                <option value="5">less than 5 years</option>
+              </select>
+            </div>
+            <div>
+              <label for="Hobbies" class="block text-gray-800"
+                >Hobbies<span class="text-gray-500"> (optional)</span></label
+              >
+              <input
+                type="text"
+                placeholder="Hobbies"
+                id="Hobbies"
+                class="inputStyle"
+                name="Hobbies"
+              />
+            </div>
+            <div>
+              <label for="graduation" class="block text-gray-800"
+                >Year of graduation?<span class="text-red-500"> *</span></label
+              >
+              <input
+                type="text"
+                placeholder="year of graduation"
+                id="graduation"
+                class="inputStyle"
+                name="graduation"
+              />
+            </div>
+            <div>
+              <label for="linkedin_profile" class="block text-gray-800"
+                >LinkedIn<span class="text-gray-500"> (optional)</span></label
+              >
+              <input
+                type="text"
+                placeholder="Linkedin profile link"
+                id="linkedin_profile"
+                class="inputStyle"
+                name="linkedin_profile"
+              />
+            </div>
+            <div>
+              <label for="Github profile" class="block text-gray-800"
+                >Github<span class="text-gray-500"> (optional)</span></label
+              >
+              <input
+                type="text"
+                placeholder="Github profile link"
+                id="github_profile"
+                class="inputStyle"
+                name="github_profile"
+              />
+            </div>
+            <div>
+              <label for="terms" class="block text-gray-800">
+                <input type="checkbox" id="terms" name="terms" class="mr-2" required/>I
+                have read and accept the <span class="text-red-500">terms and conditions</span><span
+                  class="text-red-500"
+                >
+                  *</span
+                ></label
+              >
+            </div>
+            <div>
+              <button
+                class="bg-red-500 rounded-md px-4 py-2 text-white font-semibold"
+              >
+                Apply
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="bg-white p-5 rounded-lg w-4/12 shadow">
+        <span class="font-semibold ">Terms and conditions</span>
+        <ul class="list-disc text-sm mt-4">
+          <li class="ml-4">I will not miss use this opportunity</li>
+          <li class="ml-4">I will follow all the instructions properly</li>
+        </ul>
+      </div>
+    </main>
+    <section class="bg-green-600 hidden max-w-xl rounded-md p-10 mx-auto my-3 text-center text-white">
+        <h1 class="text-xl font-semibold">Thank you. we have received your application</h1>
+        <p class="text-md text-gray-100">Your application has been successfully registered!</p>
+        <button class="bg-white rounded-md px-4 py-2 mt-3 text-black">Share</button>
+    </section>
+
+
+    <script src="./js/main.js"></script>
+  </body>
 </html>
