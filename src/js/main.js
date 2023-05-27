@@ -4,24 +4,29 @@ const formEl = document.querySelector("main form");
 const formInputFields = document.querySelectorAll("input, select");
 const myForm = document.forms[0];
 
-const submitForm = (e) => {
-  e.preventDefault();
-
-  const isValid = validateForm();
-
-  if (isValid) {
-    const formData = new FormData(formEl);
-    const objData = Object.fromEntries(formData);
-
-    // Perform further actions with the validated form data
-    createRecord(objData); // firebase add record
-    showSuccess(); // success UI
-
-    // Reset the form
-    formEl.reset();
-  }
-};
-
+const submitForm = async (e) => {
+    e.preventDefault();
+  
+    const isValid = validateForm();
+  
+    if (isValid) {
+      const formData = new FormData(formEl);
+      const objData = Object.fromEntries(formData);
+  
+      try {
+        // Perform further actions with the validated form data
+        await createRecord(objData); // await the asynchronous operation
+        showSuccess(); // success UI
+  
+        // Reset the form
+        formEl.reset();
+      } catch (error) {
+        // Handle any errors that occur during the async operations
+        console.error("An error occurred:", error);
+      }
+    }
+  };
+  
 formEl.addEventListener("submit", submitForm);
 
 // const formDataToObject = (formData)=> {
@@ -219,5 +224,12 @@ formInputFields.forEach((input) => {
     } else {
       expError.innerHTML = "";
     }
+    
+    // if (input.name ="terms" && !input.checked) {
+    //     termsError.innerHTML = "Please agree to the terms and conditions";
+    //     isValid = false;
+    //   } else {
+    //     termsError.innerHTML = ""; //
+    //   }
   });
 });

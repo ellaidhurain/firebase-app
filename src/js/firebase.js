@@ -15,33 +15,37 @@ const storage = firebase.storage();
 
 // A document in Fire store is represented as a JavaScript object
 
-const createRecord = (objData) => {
-  return db
-    .collection("userData")
-    .add(objData)
-    .then((docRef) => {
-      console.log("Document written with ID: ", docRef.id);
-    })
-    .catch((error) => {
-      console.error("Error adding document: ", error);
-    });
+// post
+const createRecord = async (reqData) => {
+  try {
+    const db_collection = await db.collection("userData");
+    const docRef = await db_collection.add(reqData);
+
+    console.log("Document written with ID: ", docRef.id);
+    return docRef;
+  } catch (error) {
+    console.error("Error adding document: ", error);
+    throw error; // rethrow the error to propagate it to the caller
+  }
 };
 
-const getRecord = () => {
-  // Read collection data
-  db.collection("userData")
-    .get()
-    .then((resData) => {
-      resData.forEach((doc) => {
-        const documentData = doc.data();
-        console.log(documentData);
-        // Do something with the document data
-      });
-    })
-    .catch((error) => {
-      console.log("Error fetching collection:", error);
+//get
+const getRecord = async () => {
+  try {
+    // Read collection data
+    const resData = await db.collection("userData").get();
+
+    resData.forEach((doc) => {
+      const documentData = doc.data();
+      console.log(documentData);
+      // Do something with the document data
     });
+  } catch (error) {
+    console.log("Error fetching collection:", error);
+    throw error; // rethrow the error to propagate it to the caller
+  }
 };
+
 
 // function storeImageInFirestore(file) {
 //   if (!file || !file.name) {
