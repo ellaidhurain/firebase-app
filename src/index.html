@@ -18,11 +18,11 @@
 
     <main class="p-10 flex">
       <div class="bg-white p-5 rounded-lg w-8/12 mr-5 shadow">
-        <h3 class="text-sm font-semibold">Get free education for everyone</h3>
-        <p class="text-sm text-gray-800">Join our community</p>
+        <h3 class="text-md font-semibold">Get free education anytime</h3>
+        <p class="text-md text-gray-800">Join our developer community</p>
 
         <form id="feedback">
-          <div class="my-5 grid grid-cols-2 gap-4 text-sm">
+          <div class="my-5 grid grid-cols-2 gap-4 text-md">
             <div>
               <label for="fullName" class="block text-gray-800"
                 >Full name<span class="text-red-500">*</span></label
@@ -33,43 +33,46 @@
                 id="fullName"
                 class="inputStyle"
                 name="fullName"
+          
               />
+              <span id="nameError" class="text-red-500 "></span>
             </div>
+       
 
-            <div class="text-sm space-x-2 text-gray-800">
+            <div class="space-x-2 text-gray-800">
               <label for="gender" class="mb-2 flex items-center"
                 >Gender<span class="text-red-500">*</span></label
               >
+              <div>
               <label
                 ><input
                   type="radio"
                   id="gender"
-                  name="gender"
                   value="male"
                   class="mr-1"
-                  name="male"
+                  name="gender"
                 />male</label
               >
               <label
                 ><input
                   type="radio"
                   id="gender"
-                  name="gender"
-                  value="male"
+                  value="Female"
                   class="mr-1"
-                  name="female"
+                  name="gender"
                 />Female</label
               >
               <label
                 ><input
                   type="radio"
                   id="gender"
-                  name="gender"
-                  value="male"
+                  value="others"
                   class="mr-1"
-                  name="others"
+                  name="gender"
                 />others</label
               >
+              </div>
+              <span id="genderError" class="text-red-500 "></span>
             </div>
             <div>
               <label for="email" class="block text-gray-800"
@@ -82,6 +85,7 @@
                 class="inputStyle"
                 name="email"
               />
+              <span id="emailError" class="text-red-500 "></span>
             </div>
             <div>
               <label for="D.O.B" class="block text-gray-800"
@@ -94,6 +98,7 @@
                 class="inputStyle"
                 name="dob"
               />
+              <span id="dobError" class="text-red-500 "></span>
             </div>
             <div>
               <label for="skillKnown" class="block text-gray-800"
@@ -108,6 +113,7 @@
                 class="inputStyle"
                 name="skills"
               />
+              <span id="skillError" class="text-red-500 "></span>
             </div>
             <div>
               <label for="experience" class="block text-gray-800"
@@ -119,6 +125,7 @@
                 <option value="2">less than 2 years</option>
                 <option value="5">less than 5 years</option>
               </select>
+              <span id="expError" class="text-red-500 "></span>
             </div>
             <div>
               <label for="Hobbies" class="block text-gray-800"
@@ -143,6 +150,7 @@
                 class="inputStyle"
                 name="graduation"
               />
+              <span id="gradError" class="text-red-500 "></span>
             </div>
             <div>
               <label for="linkedin_profile" class="block text-gray-800"
@@ -175,11 +183,12 @@
                   id="terms"
                   name="terms"
                   class="mr-2"
-                  required
+                 
                 />I have read and accept the
                 <span class="text-red-500">terms and conditions</span
                 ><span class="text-red-500"> *</span></label
               >
+              <span id="termsError" class="text-red-500 "></span>
             </div>
             <div>
               <button
@@ -192,10 +201,11 @@
         </form>
       </div>
       <div class="bg-white p-5 rounded-lg w-4/12 shadow h-1/3">
-        <span class="font-semibold">Terms and conditions</span>
+        <span class="font-semibold">Terms and Conditions</span>
         <ul class="list-disc text-sm mt-4">
-          <li class="ml-4">I will not miss use this opportunity</li>
-          <li class="ml-4">I will follow all the instructions properly</li>
+          <li class="ml-4">I will use this opportunity to improve my skills.</li>
+          <li class="ml-4">I will follow all the courses regularly.</li>
+          <li class="ml-4">I will help others get skilled.</li>
         </ul>
       </div>
     </main>
@@ -221,9 +231,8 @@
     <!-- <input type="file" id="file-input"/>
     <button class="bg-blue-400" id="sub">submit</button> -->
 
-    <input type="file" id="file-input" multiple />
-    <button id="submit-button">Submit</button>
-
+    <!-- <input type="file" id="file-input" multiple />
+    <button id="submit-button">Submit</button> -->
 
     <!-- Firebase SDK -->
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
@@ -234,7 +243,7 @@
     <!-- Storage -->
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
 
-    <script type="module" src="./js/firebase.js"></script>
-    <script type="module" src="./js/main.js"></script>
+    <script  src="./js/firebase.js"></script>
+    <script  src="./js/main.js"></script>
   </body>
 </html>
