@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>firebase-form</title>
+    <link rel="stylesheet" href="/dist/output.css" />
+    <style>
+      .loader-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* semi-transparent background */
+        z-index: 9999;
+      }
+
+      .loader {
+        border: 12px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 12px solid #f7500d;
+        width: 60px;
+        height: 60px;
+        animation: spin 2s linear infinite;
+        margin: 0 auto;
+        margin-top: 200px;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-200">
+    <!-- p-1 = 4px -->
+    <div id="loader-container" class="loader-container hidden">
+      <div id="loader" class="loader"></div>
+    </div>
+    <header
+      class="bg-slate-800 text-white text-center p-10 flex justify-between items-center"
+    >
+      <div class="w-full">
+        <a
+          href="./index.html"
+          class="text-4xl text-red-500 font-Inter font-bold"
+          >HiveFy</a
+        >
+      </div>
+      <button
+        onclick="logout()"
+        class="bg-white rounded-md px-4 py-2 mt-3 text-black"
+      >
+        logout
+      </button>
+    </header>
+
+    <main class="p-10 mx-auto">
+      <div class="bg-white p-5 rounded-lg shadow">
+        <div class="text-center">
+          <h3 class="text-md font-semibold">Admin Dashboard</h3>
+          <p>User List</p>
+        </div>
+
+        <div id="table">
+          <table class="w-full mt-5 text-sm">
+            <thead>
+              <tr>
+                <th class="border p-2 w-1/12">S.No</th>
+                <th class="border p-2">Name</th>
+                <th class="border p-2 w-3/12">Email Address</th>
+                <th class="border p-2 w-4/12">Skills</th>
+                <th class="border p-2 w-2/12">Action</th>
+              </tr>
+            </thead>
+            <tbody id="table-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+
+    <!-- Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+
+    <!-- Storage -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+
+    <script src="./js/firebase.js"></script>
+    <script src="./js/admin.js"></script>
+  </body>
+</html>

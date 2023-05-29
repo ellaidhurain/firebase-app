@@ -10,12 +10,12 @@ const firebaseConfig = {
 
 // firebase tools
 const app = firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore(); 
-const storage = firebase.storage();
+const db = firebase.firestore();
+// const storage = firebase.storage();
+const auth = firebase.auth();
 
 // A document in Fire store is represented as a JavaScript object
 
-// post
 const createRecord = async (reqData) => {
   try {
     const db_collection = await db.collection("userData");
@@ -25,23 +25,6 @@ const createRecord = async (reqData) => {
     return docRef;
   } catch (error) {
     console.error("Error adding document: ", error);
-    throw error; // rethrow the error to propagate it to the caller
-  }
-};
-
-//get
-const getRecord = async () => {
-  try {
-    // Read collection data
-    const resData = await db.collection("userData").get();
-
-    resData.forEach((doc) => {
-      const documentData = doc.data();
-      console.log(documentData);
-      // Do something with the document data
-    });
-  } catch (error) {
-    console.log("Error fetching collection:", error);
     throw error; // rethrow the error to propagate it to the caller
   }
 };
@@ -101,7 +84,7 @@ const getRecord = async () => {
 
 //     // Create a URL for the file
 //     // const fileURL = URL.createObjectURL(file);
-    
+
 //     //     storeImageInFirestore(file)
 //     //       .then((documentId) => {
 //     //         console.log("Image stored in Firestore with document ID:", documentId);

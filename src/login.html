@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>firebase-form</title>
+    <link rel="stylesheet" href="/dist/output.css" />
+    <style>
+   
+      .button-loading {
+        opacity: 0.6;
+        transition: opacity 0.3s ease;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
+  </head>
+  <body class="bg-gray-200">
+    <!-- p-1 = 4px -->
+    <header class="bg-slate-800 text-white text-center p-10">
+      <a href="./index.html" class="text-4xl text-red-500 font-Inter font-bold"
+        >HiveFy</a
+      >
+      <p class="mt-2 text-gray-300">Free education for everyone</p>
+      <button
+      class="bg-white rounded-md px-4 py-2 mt-3 text-black"
+    >
+      <a href="index.html">Home</a>
+    </button>
+    </header>
+
+    <main class="p-10 w-4/12 mx-auto">
+      <div class="bg-white p-5 rounded-lg  shadow">
+        <h3 class="text-md font-semibold">Admin panel</h3>
+        <p class="text-md text-gray-800">Login to view records</p>
+
+        <form id="loginForm">
+          <div class="my-5 text-md">
+            <div>
+              <label for="email" class="block text-gray-800"
+                >Email Address<span class="text-red-500">*</span></label
+              >
+              <input
+                type="email"
+                placeholder="ex@gmail.com"
+                id="email"
+                class="inputStyle"
+                name="email"
+                autocomplete="email"  
+              />
+              <span id="emailError" class="text-red-500"></span>
+            </div>
+            <div>
+              <label for="password" class="block text-gray-800 mt-4"
+                >Password<span class="text-red-500">*</span></label
+              >
+              <input
+                type="password"
+                placeholder="password"
+                id="password"
+                class="inputStyle"
+                name="password"
+                autocomplete="current-password"  
+              />
+              <span id="passError" class="text-red-500"></span>
+            </div>
+            <div class="flex items-center justify-center ">
+              <button
+              id="loginButton"
+                class="bg-green-500 opacity-50 w-full rounded-md px-4 py-2 mt-4 text-white font-semibold"
+              >
+                Login
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+
+    <!-- Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script> 
+    <script src="./js/firebase.js"></script>
+    
+    <script src="./js/login.js"></script>
+  </body>
+</html>
